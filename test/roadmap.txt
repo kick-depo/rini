@@ -19,11 +19,11 @@
   > - canon [✔]
   > - xerox [✔]
   > - samsung [✔]
-  > - brother  
-  > - panasonic  
-  > - kyosera  
-  > - ricoh
-  > - pantum  
+  > - brother [✔]
+  > - panasonic [✔] 
+  > - kyosera [✔]
+  > - ricoh [✔]
+  > - pantum [✔] 
   
 > Покупка Б/У [✔]
 > Оргтехника [Доделать кнопки]

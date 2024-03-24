@@ -9,36 +9,49 @@
   <link href="test.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container mt-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Установка кондиционеров</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>1. Стандартная установка (трасса до 5 метров)</strong></li>
-              <li class="list-group-item">Модель кон-ра 7-9 - от 13 500 руб</li>
-              <li class="list-group-item">Модель кон-ра 12 - от 14 000 руб</li>
-              <!-- Добавьте другие пункты, если необходимо -->
-            </ul>
-          </div>
+  <header class="mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="" src="../img/rini-logo.png" alt="Логотип">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="cartridge.html">Картриджи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="zapravka/zapravka.html">Заправка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bu.html">Покупка Б/У</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="office-equipment.html">Оргтехника</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="condition.html">Установка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="repair.html">Ремонт</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Контакты</a>
+            </li>
+          </ul>
         </div>
+        
+        <form class="d-flex me-2 my-2 form-search" action="">
+          <input class="form-control" type="search" placeholder="Поиск">
+          <button class="btn btn-outline-secondary rini-btn">Найти</button>
+        </form>
       </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Штроба</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Гипс - 1000 руб/м</li>
-              <li class="list-group-item">Кирпич - 2000 руб/м</li>
-              <!-- Добавьте другие пункты, если необходимо -->
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Добавьте другие карточки по аналогии -->
-    </div>
-  </div>
+    </nav>
+  </header>
 <!-- Подключение Bootstrap JS (необходим для работы некоторых компонентов) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
