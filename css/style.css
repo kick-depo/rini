@@ -6,6 +6,15 @@ header {
   border-bottom: 1px solid #d5d5d5;
 }
 
+.form-search .form-control {
+  margin-right: 3px;
+}
+
+.rini_sort_btns {
+  border-top: 2px solid #d5d5d5;
+}
+
+
 .cartridge_img {
   height: 258.98px;
   /* object-fit: cover; */
@@ -33,7 +42,8 @@ footer {
   margin: 0 auto;
   height: 15px;
   width: 15px;
-  background: -webkit-linear-gradient(90deg, #0400f0,#ff0000,#eef207);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #0400f0,#ff0000,#eef207);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+  background: -webkit-linear-gradient(90deg, #0400f0,#ff0000,#eef207);
+  background: linear-gradient(90deg, #0400f0,#ff0000,#eef207);                                            
 }
 
 .rini_warn {
@@ -46,18 +56,38 @@ footer {
   width: 50%;
  }
 
-
-
-
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
   .rini_table_scroll {
-    overflow: scroll;
+    overflow-x: scroll;
   }
   
+  .popular_cartridge .card{
+    margin: 0 8%;
+   }  
   
-
 } 
+
+@media (max-width: 991.98px) {
+
+  main {
+    margin-top: 60px;
+  }
+
+  .form-search {
+    position: absolute;
+    top: 100%; /* Расположить форму под меню */
+    left: 0; /* Выравнивание по левому краю */
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    padding: 3px 7px;
+  }
+
+  .form-search .form-control {
+    flex: 1;
+  }
+}
