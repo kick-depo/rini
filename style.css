@@ -1,3 +1,6 @@
+/* Theme Name: Rini-theme */
+
+
 body {
   background-color: rgb(249,250,250);
 }
@@ -17,7 +20,6 @@ header {
 
 .cartridge_img {
   height: 258.98px;
-  /* object-fit: cover; */
 }
 
 .rini_act {
@@ -80,7 +82,7 @@ footer {
   .form-search {
     position: absolute;
     top: 100%; /* Расположить форму под меню */
-    left: 0; /* Выравнивание по левому краю */
+    left: 0;
     width: 100%; 
     display: flex;
     align-items: center;
