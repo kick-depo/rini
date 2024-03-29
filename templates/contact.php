@@ -1,60 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="адрес rini.ru, контакты rini.ru, адрес рини, контакты рини">
-  <meta name="description" content="Rini.ru - контактная информация, адрес, реквизиты.">
-  <title>Контактная информация. Rini.ru - Картриджи, расходные материалы для оргтехники.</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-</head>
-<body>
+<?php 
+/* 
+Template Name: Контакты
+*/ 
+get_header();
+?>
 
-<header class="mb-4">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img class="" src="img/rini-logo.png" alt="Логотип">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="cartridge.html">Картриджи</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="zapravka/zapravka.html">Заправка</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="bu.html">Покупка Б/У</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="office-equipment.html">Оргтехника</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="condition.html">Установка</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="repair.html">Ремонт</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Контакты</a>
-          </li>
-        </ul>
-        <form class="d-flex me-2" action="">
-          <input class="form-control" type="search" placeholder="Поиск">
-        </form>
-        <button class="btn btn-outline-secondary rini-btn">Найти</button>
-      </div>
-    </div>
-  </nav>
-</header>
 
 <main>
   <div class="container">
@@ -126,7 +76,7 @@
                 <p>Доставка по России осуществляется только по полной предоплате, наложенным платежом  отправка не производится. Если доставка осуществляется Почтой России, в счет  включаются почтовые расходы и стоимость доставки. Доставка до транспортной компании  — по выше перечисленным условиям.</p>
                 <p>Самовывоз производится только по адресу г. Москва, Волгоградский проспект, дом 28.  При самовывозе со склада действуют скидки на расходные материалы: на совместимую  продукцию 15%, на оригинальную продукцию 5%.</p>
               </div>
-              <div>
+              <div class="mt-5">
                 <p><strong>ICQ: </strong>6496449</p>
                 <p><strong>Режим работы:</strong></p>
                 <p>В рабочие дни ПнПт с 10-00 до 19-00 без обеда</p>
@@ -149,18 +99,7 @@
 
         <!-- Правый инфобар -->
       <div class="col-lg-3 col-sm-12 my-3">
-        <h3 class="text-uppercase">Заказ по телефону</h3>
-        <a href="tel:+74956496449">+7 (495) 649-64-49</a>
-        <p>Режим работы в будни:
-          с 10:00 до 18:00
-          в воскресенье, звонить перед выездом:
-          с 12:00 до 16:00</p>
-        <h4 class="mb-5">
-          БЕСПЛАТНАЯ ДОСТАВКА ОТ 800 РУБ.
-        </h4>
-        <p class="mb-4"><b>Возможна оплата картой</b></p>
-        <p><b>ВНИМАНИЕ!</b> В связи с изменением курса рубля по отношению к иностраннойвалюте, цены на сайте могут отличаться от фактических, носят информационный характери не являются публичной офертой. Актуальную информацию можно получить у наших специалистов.
-        </p>
+        <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
@@ -168,48 +107,4 @@
 
 
 
-<footer>
-  <div class="container">
-    <div class="row pt-4">
-      <div class="col-lg-3 col-sm-6 rini_footer">
-          <a class="text-uppercase d-block" href="cartridge.html">Картриджи</a>
-          <a class="text-uppercase d-block" href="office-equipment.html">Оргтехника</a>
-          <a class="text-uppercase d-block" href="print_service.html">Сервис печати</a>
-          <a class="text-uppercase d-block" href="zapravka/zapravka.html">Заправка картриджей</a>
-          <a class="text-uppercase d-block" href="paper.html">Бумага</a>
-          <a class="text-uppercase d-block" href="#">Скачать прайс</a>
-          <a class="text-uppercase d-block" href="contact.html">Контакт</a>
-      </div>
-      <div class="col-lg-3 col-sm-6 rini_footer">
-        <p class="text-muted text-uppercase mb-1">Телефоны</p>
-        <p class="mb-1">+7 (495) 649-64-49</p>
-        <p class="mb-3">+7 (903) 729-00-54</p>
-        <p class="text-muted text-uppercase mb-1">Почта</p>
-        <a href="mailto:6496449@rini.ru">6496449@rini.ru</a>
-        <p class="mb-1">ICQ: 6496449</p>
-      </div>
-      <div class="col-lg-3 col-sm-6 rini_footer">
-        <p class="text-muted text-uppercase mb-1">Режим работы</p>
-        <p>Режим работы в будни:<br>с 09:00 до 19:00</p>
-        <p>Режим работы в праздники:<br>с 12:00 до 16:00</p>
-      </div>
-      <div class="col-lg-3 col-sm-6 rini_footer">
-        <p class="text-muted text-uppercase mb-1">Адрес</p>
-        <p>Москва, Волгоградский<br>проспект, дом 28.</p>
-        <a title="Посмотреть адрес на карте (maps.yandex.ru)" href="http://maps.yandex.ru/?text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2028&amp;sll=37.682889%2C55.726107&amp;sspn=0.016457%2C0.006195&amp;ll=37.684434%2C55.726593&amp;spn=0.026141%2C0.008309&amp;l=sat" target="_blank" rel="nofollow">Посмотреть на карте</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p class="mb-1">© 2009 – 2024 <a href="http://rini.ru/">RINI.RU</a></p>
-        <p>Картриджи, расходные материалы для оргтехники. <a href="#">Политика обработки персональных данных</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php get_footer(); ?>
