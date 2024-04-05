@@ -129,7 +129,7 @@ get_header();
           <a href="#" class="btn btn-primary">СКАЧАТЬ EXCEL</a>
           <div class="rini_conditioner my-5">
             <a href="#">
-              <img src="img/conditioner-1.jpg" alt="Кондиционер">
+              <img src="<?= home_url('/').'/conditioner-1/' ;?>" alt="Кондиционер">
             </a>
             <h3 class="text-uppercase">Установка и профилактика<br><a href="#">кондиционеров</a></h3>
           </div>

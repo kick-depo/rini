@@ -16,7 +16,6 @@
     ;?>
   </title>
   <link href="style.css" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
   <?php wp_head(); ?>
 </head>
 <body>
@@ -25,7 +24,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="<?= home_url(); ?>">
-        <img class="" src="img/rini-logo.png" alt="Логотип">
+        <img src="<?= home_url( '/' ).'rini-logo/';?>" alt="Логотип">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
