@@ -1,6 +1,6 @@
 <?php 
 /* 
-Template Name: Заправка HP
+Template Name: Заправка Panasonic
 */ 
 get_header();
 ?>
@@ -8,7 +8,7 @@ get_header();
 <main>
   <div class="container">
     <div class="row">
-      <h2>Заправка картриджей Hewlett-Packard</h2>
+      <h2>Заправка картриджей Panasonic</h2>
       <div class="col-lg-9 col-sm-12">
         <p>При выезде на заправку до 4 шт +350 руб за картридж, от 4 до 10 шт +120 руб за картридж, от 10 до 40 шт + 60 руб за картридж. Забираем в сервис, заправляем, привозим - 700 руб за доставку</p>
         <p class="mb-4"><strong>Выезд мастера на диагностику и ремонт оргтехники - 900 руб<br>

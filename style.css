@@ -17,6 +17,10 @@ header {
   border-top: 2px solid #d5d5d5;
 }
 
+.rini_zapravka_menu li {
+  text-decoration: none;
+  display: inline;
+}
 
 .cartridge_img {
   height: 258.98px;
