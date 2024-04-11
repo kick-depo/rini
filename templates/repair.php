@@ -11,7 +11,8 @@ get_header();
         <div class="col-lg-9 col-sm-12">
           <h2 class="mb-3">Ремонт Оргтехники</h2>
           <a href="proshivka.html" class="btn btn-primary mb-4" role="Button">Прошивка оргтехники</a>
-          <div class="card mb-4">
+          <?php the_content(); ?>
+          <!-- <div class="card mb-4">
             <h5 class="card-header">Услуги</h5>
             <div class="card-body">
               <ul class="list-group list-group-flush mb-3">
@@ -55,7 +56,7 @@ get_header();
                 <li class="list-group-item">Ремонт — от 1500 руб</li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- Правый инфобар -->

@@ -16,10 +16,10 @@ function add_menu() {
 }
 
 function custom_table_class( $custom_table_class ) {
-  // Настройка классов таблицы
+
   $custom_table_class = str_replace( '<table>', '<table class="table table-striped table-bordered mb-5 align-center rini_zapravka_table">', $custom_table_class );
   
-  $custom_table_class = preg_replace( '/<table(.*?)>(.*?)<tr(.*?)>(.*?)<\/tr>/', '<table$1>$2<thead$3>$4</thead>', $custom_table_class, 1 );
+  // $custom_table_class = preg_replace( '/<table(.*?)>(.*?)<tr(.*?)>(.*?)<\/tr>/', '<table$1>$2<thead$3>$4</thead>', $custom_table_class, 1 );
 
   $custom_table_class = str_replace( '<th>', '<th scope="col">', $custom_table_class );
 
@@ -45,9 +45,7 @@ function change_menu_item_title($title, $item, $args, $depth) {
   return $title;
 }
 add_filter('nav_menu_item_title', 'change_menu_item_title', 10, 4);
-
 add_filter('nav_menu_link_attributes', 'add_menu_link_attributes', 10, 3);
-
 add_filter( 'the_content', 'custom_table_class' );
 
 ?>

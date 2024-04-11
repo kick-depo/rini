@@ -22,6 +22,22 @@ header {
   display: inline;
 }
 
+.wp-block-table thead {
+  border-bottom: 2px solid #000;
+}
+
+.wp-block-table thead th{
+  border-color: var(--bs-border-color);
+}
+
+.rini_zapravka_table td {
+  border-color: var(--bs-border-color);
+}
+
+.rini_zapravka_table tbody {
+  border-top: 0px solid #fff;
+}
+
 .cartridge_img {
   height: 258.98px;
 }
@@ -57,6 +73,16 @@ footer {
   background-color: rgba(255, 193, 7, 0.7)!important;
 }
 
+.tablepress {
+  table-layout: fixed;
+}
+
+.tablepress .column-1 {
+  width: 65%
+}
+.tablepress .column-2 {
+  width: 35%; 
+}
 
 @media screen and (max-width: 578px) {
  .rini_footer {
