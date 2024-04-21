@@ -11,7 +11,9 @@ get_header();
       <div class="row">
         <h2 class="mb-4">Установка кондиционеров</h2>
         <div class="col-lg-9 col-sm-12">
-          <?php the_content();?>
+          <div class="rini_fixed_column_table">
+            <?php the_content();?>
+          </div>
 
           <div class="card my-5">
             <h5 class="card-header text-bg-warning rini_warn">Внимание!</h5>

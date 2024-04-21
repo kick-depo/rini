@@ -9,6 +9,19 @@ header {
   border-bottom: 1px solid #d5d5d5;
 }
 
+.btn-primary {
+  font-weight: 600;
+  background-color: #FF760B!important;
+  border-color: #FF760B;
+}
+
+.btn-primary:hover {
+  border-color: #FF760B;
+  -webkit-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+}
+
 .form-search .form-control {
   margin-right: 3px;
 }
@@ -52,6 +65,12 @@ footer {
   font-size: 0.8em;
 }
 
+/* .rini_color_span {
+  display: block;
+  height: 14px;
+  width: 14px;
+} */
+
 .rini_color-square-black {
   display: block;
   margin: 0 auto;
@@ -73,15 +92,15 @@ footer {
   background-color: rgba(255, 193, 7, 0.7)!important;
 }
 
-.tablepress {
-  table-layout: fixed;
+.rini_fixed_column_table .tablepress {
+  /* table-layout: fixed; */
 }
 
-.tablepress .column-1 {
-  width: 65%
+.rini_fixed_column_table .tablepress .column-1 {
+  width: 60%
 }
-.tablepress .column-2 {
-  width: 35%; 
+.rini_fixed_column_table .tablepress .column-2 {
+  width: 40%; 
 }
 
 @media screen and (max-width: 578px) {

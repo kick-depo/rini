@@ -32,6 +32,7 @@ get_header();
           <button class="btn btn-primary my-1">Лазерные</button>
           <button class="btn btn-primary my-1">Струйные</button>
         </div>
+        <?php the_content(); ?>
       </div>
       <div class="col-lg-3 col-sm-12 my-3">
         <?php get_sidebar(); ?>
