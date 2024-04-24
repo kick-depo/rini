@@ -15,7 +15,6 @@
     }
     ;?>
   </title>
-  <link href="style.css" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 <body>

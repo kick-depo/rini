@@ -36,7 +36,7 @@ get_header();
       </div>
       <div class="col-lg-3 col-sm-12 my-3">
         <?php get_sidebar(); ?>
-        <h3 class="text-uppercase">Прайс картриджей</h3>
+        <!-- <h3 class="text-uppercase">Прайс картриджей</h3>
         <a href="#" class="btn btn-primary">ONLINE</a>
         <a href="#" class="btn btn-primary">СКАЧАТЬ EXCEL</a>
         <div class="rini_conditioner my-5">
@@ -50,7 +50,7 @@ get_header();
         <h3 class="mb-5">Купи <span class="rini_act">любые 10 совместимых лазерных картриджей</span> — получи флеш-карту на 16ГБ </h3>
         <p>
           Изображение товара, может отличаться от реального внешнего вида. Комплектация может быть изменена производителем без предварительного уведомления. Данное описание и кол-во товара не является публичной офертой.
-        </p>
+        </p> -->
       </div>
     </div>
   </div>  

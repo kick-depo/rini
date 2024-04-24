@@ -35,6 +35,32 @@ header {
   display: inline;
 }
 
+.rini_cartridge_border {
+  border-bottom: 1px solid #000;
+}
+
+.rini_cartridge_border small {
+  font-size: 12px;
+}
+
+.rini_cartridge_gallery img:hover {
+  border: 1px solid #000;
+}
+
+#main-image {
+min-width: 150px;
+min-height: 200px;
+}
+
+.thumbnail {
+  width: 95px;
+  height: 75px;
+}
+
+.span-align {
+  margin: 0 auto;
+}
+
 .wp-block-table thead {
   border-bottom: 2px solid #000;
 }
@@ -92,9 +118,9 @@ footer {
   background-color: rgba(255, 193, 7, 0.7)!important;
 }
 
-.rini_fixed_column_table .tablepress {
-  /* table-layout: fixed; */
-}
+/* .rini_fixed_column_table .tablepress {
+   table-layout: fixed;
+} */
 
 .rini_fixed_column_table .tablepress .column-1 {
   width: 60%
