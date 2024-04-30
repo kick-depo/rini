@@ -15,8 +15,21 @@ header {
   border-color: #FF760B;
 }
 
+.btn-success {
+  font-weight: 600;
+  background-color: #02ca16!important;
+  border-color: #02ca16;
+}
+
 .btn-primary:hover {
   border-color: #FF760B;
+  -webkit-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+  -moz-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
+}
+
+.btn-success:hover {
+  border-color: #02ca16;
   -webkit-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
   -moz-box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
   box-shadow: 0px 0px 16px 5px rgba(34, 60, 80, 0.2) inset;
@@ -45,6 +58,7 @@ header {
 
 .rini_cartridge_gallery img:hover {
   border: 1px solid #000;
+  border-radius: 4px;
 }
 
 #main-image {
@@ -56,6 +70,34 @@ min-height: 200px;
   width: 95px;
   height: 75px;
 }
+
+/* ↓Тест↓ */
+.test_items {
+  display: inline-block;
+  background-color: rgb(200,200,200);
+  border: 1px solid #000;
+  border-radius: 5px;
+  min-width: 35px;
+  text-align: center;
+  user-select: none;
+}
+
+.test_items:hover {
+  background-color: rgb(110,120,120);
+  cursor: pointer;
+}
+
+.cart-wrapper {
+  border: 1px solid rgb(110,120,120);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.cart-item {
+  border-bottom: 1px solid #000;
+}
+/* ↑Тест↑ */
 
 .span-align {
   margin: 0 auto;
