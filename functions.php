@@ -6,9 +6,7 @@ add_action('after_setup_theme', 'add_menu');
 function add_scripts_and_styles() {
   wp_enqueue_style('bootstrap_style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
   wp_enqueue_style('style', get_stylesheet_uri());
-  if (is_page_template('templates/single-cartridge.php') || is_page_template('templates/test_page.php')) {
-    wp_enqueue_script('rini_script', get_template_directory_uri() . '/assets/js/rini.js', null, null);
-  }
+  wp_enqueue_script('rini_script', get_template_directory_uri() . '/assets/js/rini.js', null, null);
 }
 
 

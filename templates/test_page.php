@@ -78,9 +78,25 @@ get_header();
           </div>
           </div>
           <div class="col-lg-4">
-            <div class="cart-wrapper">
+            <div class="cart">
               <h5 class="mb-1">Корзина</h5>
               <p data-cart-empty>У вас нет покупок</p>
+              <div class="cart-wrapper"></div>
+              <div class="cart-total">
+                <p>Итого: <span class="cart-total__price">0</span> руб.</p>
+              </div>
+              <div id=order-form class="d-none">
+                <form action="">
+                  <div class="mb-2 me-1">Имя:<input type="text" name="" id=""></div>
+                  <div class="mb-2 me-1">Телефон:<input type="tel" name="" id=""></div>
+                  <div class="mb-2 me-1">E-mail:<input type="email" name="" id=""></div>
+                  <div class="mb-2 me-1">Когда вам можно звонить<input type="text" name="" id=""></div>
+                  <div class="mb-2 me-1">Адрес доставки<input type="text" name="" id=""></div>
+                  <div class="mb-2 me-1">Желаемое время доставки<input type="text" name="" id=""></div>
+                  <div class="mb-2 me-1">Карта или купон <input type="text" name="" id="" placeholder="№"></div>
+                  <input type="submit" value="Отправить">
+                </form>
+              </div>
             </div>
           </div>
         </div>

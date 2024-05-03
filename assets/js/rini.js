@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
   
+  
+
+
+
+
+
+
+
+
+
+  
   // Счетчик
   window.addEventListener('click', function(event) {
 
@@ -29,18 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (event.target.closest('.cart-wrapper') && parseInt(counter.innerText) === 1) {
         event.target.closest('.cart-item').remove()
         toggleCartStatus()
+        calcCartPrice()
       }
     }
-  })
 
-  function toggleCartStatus() {
+    if (event.target.hasAttribute('data-action') && event.target.closest('.cart-wrapper')) {
+      calcCartPrice()
+    }
+  })
+  // Скрыть строку "У вас нет покупок"
+    function toggleCartStatus() {
     const cartWrapper = document.querySelector('.cart-wrapper')
     const cartEmptyBadge = document.querySelector('[data-cart-empty]')
-    if (cartWrapper.children.length > 2) {
+
+    const orderForm = document.querySelector('#order-form')
+    if (cartWrapper.children.length > 0) {
       cartEmptyBadge.classList.add('d-none')
+      orderForm.classList.remove('d-none')
     } else {
       cartEmptyBadge.classList.remove('d-none')
     }
+
+    
   }
 
   // Корзина
@@ -65,25 +86,41 @@ document.addEventListener('DOMContentLoaded', function() {
         counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter)
       } else {
         const cartItemHTML = `<div class="cart-item mb-2" data-id="${productInfo.id}">
-                              <img class="mb-2 img-fluid"src="${productInfo.imgSrc}" alt="${productInfo.title}">
-                              <div class="cart-item__title fw-bold mb-1">${productInfo.title}</div>
-                              <div class="cart-item__id mb-1">Артикул: <small class="text-muted">${productInfo.id}</small></div>
-                              <div class="cart-item__itemsInBox mb-1">Количество картриджей в упаковке: <small class="text-muted">${productInfo.itemsInBox}</small></div>
-                              <div class="cart-item__price mb-2">Цена: <small class="text-muted">${productInfo.price}</small></div>
-                              <div class="counter-wrapper mb-3">
-                                <div class="test_items items__control" data-action="minus">-</div>
-                                <div class="test_items items__current" data-counter>${productInfo.counter}</div>
-                                <div class="test_items items__control" data-action="plus">+</div>
-                              </div>
-                            </div>`
+                                <img class="mb-2 img-fluid"src="${productInfo.imgSrc}" alt="${productInfo.title}">
+                                <div class="cart-item__title fw-bold mb-1">${productInfo.title}</div>
+                                <div class="cart-item__id mb-1">Артикул: <small class="text-muted">${productInfo.id}</small></div>
+                                <div class="cart-item__itemsInBox mb-1">Количество картриджей в упаковке: <small class="text-muted">${productInfo.itemsInBox}</small></div>
+                                <div class="cart-item__price mb-2">Цена: <small class="text-muted price__currency-span">${productInfo.price}<small></div>
+                                <div class="counter-wrapper mb-3">
+                                  <div class="test_items items__control" data-action="minus">-</div>
+                                  <div class="test_items items__current" data-counter>${productInfo.counter}</div>
+                                  <div class="test_items items__control" data-action="plus">+</div>
+                                </div>
+                              </div>`
         cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML)
       }
       card.querySelector('[data-counter]').innerText = '1'
 
       toggleCartStatus()
+      calcCartPrice()
+      
     }
   })
-
-
 })
+
+// Итоговая стоимость
+function calcCartPrice() {
+  const cartItems = document.querySelectorAll('.cart-item')
+  let totalPrice = 0
+
+  cartItems.forEach(function(item) {
+    const amountEl = item.querySelector('[data-counter]')
+    const priceEl = item.querySelector('.price__currency-span')
+    const currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText)
+    totalPrice += currentPrice
+    
+  })
+  document.querySelector('.cart-total__price').innerText = totalPrice
+}
+
 
