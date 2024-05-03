@@ -43,18 +43,50 @@ get_header();
         <div class="col-lg-6 col-sm-12">
           <div class="rini_cartridge_border">
             <p class="mb-1 fs-4 fw-bold">Совместимый</p>
-            <p class="fs-3"><?= CFS()->get('cartridge_compatible_price');?> руб.</p>
+             <div class="row">
+              <div class="col-8">
+                <p class="fs-3"><?= CFS()->get('cartridge_compatible_price');?> руб.</p> 
+              </div>
+              <div class="col-4">
+                <button class="btn btn-primary">Купить</button>
+              </div>
+             </div>
             <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span><?= CFS()->get('cartridge_compatible_price_10');?> руб.</span></p>
           </div>
           <div class="rini_cartridge_border">
             <p class="mb-1 fs-4 fw-bold">Заправка</p>
-            <p class="fs-3"><?= CFS()->get('cartridge_refill_price');?> руб.</p>
+             <div class="row">
+              <div class="col-8">
+                <p class="fs-3"><?= CFS()->get('cartridge_refill_price');?> руб.</p>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-success">Заправить</button>
+              </div>
+             </div>
           </div>
-          <div class="rini_cartridge_border mt-3 pb-3">
+
+          <?php if (CFS()->get('cartridge_original_price')) {
+            ?>
+          <div class="rini_cartridge_border mt-3 pb-2">
             <p class="mb-1 fs-4 fw-bold">Оригинальный</p>
-            <p class="fs-3"><?= CFS()->get('cartridge_original_price');?> руб.</p>
-            <p class="mb-1 text-muted">Цена оригинальных картриджей от 10 шт. - <span><?= CFS()->get('cartridge_original_price_10');?> руб.</span></p>
+             <div class="row">
+              <div class="col-8">
+                <p class="fs-3"><?= CFS()->get('cartridge_original_price');?> руб.</p>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-primary">Купить</button>
+              </div>
+             </div>
+            <?php if (CFS()->get('cartridge_original_price_10')) {
+              ?>
+              <p class="mb-1 text-muted">Цена оригинальных картриджей от 10 шт. - <span><?= CFS()->get('cartridge_original_price_10');?> руб.</span></p>
+              <?php
+            }
+            ?>
           </div>
+          <?php
+          }
+          ?>
           <div class="rini_cartridge_border">
             <div class="row my-2">
               <div class="col-6">Ресурс</div>

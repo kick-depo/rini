@@ -119,6 +119,10 @@ min-height: 200px;
   border-top: 0px solid #fff;
 }
 
+.rini_cartridge_border button {
+  min-width: 105px;
+}
+
 .cartridge_img {
   height: 258.98px;
 }
