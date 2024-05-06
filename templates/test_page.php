@@ -78,7 +78,17 @@ get_header();
           </div>
           </div>
           <div class="col-lg-4">
-            <div class="cart">
+            <div class="row cart-item">
+              <div class="col-4">Картридж</div>
+              <div class="col-4">2100</div>
+              <div class="col-4 change_value">
+                <button class="btn btn-change_value">-</button>
+                <span class="current-value">1</span>
+                <button class="btn btn-change_value">+</button>
+              </div>
+            </div>
+
+            <!-- <div class="cart">
               <h5 class="mb-1">Корзина</h5>
               <p data-cart-empty>У вас нет покупок</p>
               <div class="cart-wrapper"></div>
@@ -97,7 +107,7 @@ get_header();
                   <input type="submit" value="Отправить">
                 </form>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         </div>				

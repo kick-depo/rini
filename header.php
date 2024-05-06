@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="<?= home_url(); ?>">
-        <img src="<?= home_url( '/' ).'rini-logo/';?>" alt="Логотип">
+        <img src="http://rini-ru-wp/wp-content/uploads/rini-logo-1.png" alt="Логотип">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>

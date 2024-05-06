@@ -11,7 +11,7 @@ get_header();
       <div class="col-lg-9 col-sm-12">
         <div class="row">
         <div class="col-lg-6 col-sm-12">
-          <h2><?= the_title(); ?></h2>
+          <h2 class="cart_cartridge-title"><?= the_title(); ?></h2>
           <div>
             <img id="main-image" class="img-fluid" src="<?= CFS()->get('cartridge_photo') ;?>" alt="Изображение картриджа">
           </div>
@@ -25,8 +25,8 @@ get_header();
             }
             ?>
           </div>
-          <div class="rini_cartridge_gallery">
-            <p>Фотографии оригинального картриджа</p>
+          <div class="rini_cartridge_gallery mb-3">
+            <p>Фотографии оригинального картриджа:</p>
             <?php $loop = CFS()->get('cartridge_original_photo_add');
             foreach ($loop as $item) {
               ?>
@@ -36,45 +36,43 @@ get_header();
             ?>
           </div>
           <div>
-            <p>Дополнительная информация</p>
-            <p><?= CFS()->get('cartridge_dopinfo');?></p>
+            <p>Информация о картридже <span class="fw-bold"><?= the_title();?></span>:</p>
+            <p><?= CFS()->get('cartridge_info');?></p>
           </div>
         </div>
         <div class="col-lg-6 col-sm-12">
-          <div class="rini_cartridge_border">
-            <p class="mb-1 fs-4 fw-bold">Совместимый</p>
-             <div class="row">
-              <div class="col-8">
-                <p class="fs-3"><?= CFS()->get('cartridge_compatible_price');?> руб.</p> 
+          <?php if (CFS()->get('cartridge_compatible_price')) {
+            ?>
+            <div class="rini_cartridge_border cart_cartridge" data-type="Совместимый">
+              <p class="mb-1 fs-4 fw-bold">Совместимый</p>
+              <div class="row">
+                <div class="col-8">
+                  <p class="fs-3"><span class="cart_cartridge-price"><?= CFS()->get('cartridge_compatible_price');?></span> руб.</p> 
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-primary btn-buy_compatible cart_buy-button" data-cart >Купить</button>
+                </div>
               </div>
-              <div class="col-4">
-                <button class="btn btn-primary">Купить</button>
-              </div>
-             </div>
-            <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span><?= CFS()->get('cartridge_compatible_price_10');?> руб.</span></p>
+            <?php if (CFS()->get('cartridge_compatible_price_10')) {
+              ?>
+                <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span><?= CFS()->get('cartridge_compatible_price_10');?> руб.</span></p>
+              <?php
+              }
+            ?>   
           </div>
-          <div class="rini_cartridge_border">
-            <p class="mb-1 fs-4 fw-bold">Заправка</p>
-             <div class="row">
-              <div class="col-8">
-                <p class="fs-3"><?= CFS()->get('cartridge_refill_price');?> руб.</p>
-              </div>
-              <div class="col-4">
-                <button class="btn btn-success">Заправить</button>
-              </div>
-             </div>
-          </div>
-
+          <?php
+          }
+          ?>
           <?php if (CFS()->get('cartridge_original_price')) {
             ?>
-          <div class="rini_cartridge_border mt-3 pb-2">
+          <div class="rini_cartridge_border mt-3 pb-2 cart_cartridge" data-type="Оригинальный">
             <p class="mb-1 fs-4 fw-bold">Оригинальный</p>
              <div class="row">
               <div class="col-8">
-                <p class="fs-3"><?= CFS()->get('cartridge_original_price');?> руб.</p>
+                <p class="fs-3"><span class="cart_cartridge-price"><?= CFS()->get('cartridge_original_price');?></span> руб.</p>
               </div>
               <div class="col-4">
-                <button class="btn btn-primary">Купить</button>
+                <button class="btn btn-primary btn-buy_orignal cart_buy-button" data-cart>Купить</button>
               </div>
              </div>
             <?php if (CFS()->get('cartridge_original_price_10')) {
@@ -83,6 +81,32 @@ get_header();
               <?php
             }
             ?>
+          </div>
+          <?php
+          }
+          ?>
+          <?php if (CFS()->get('cartridge_refill_price')) {
+            ?>
+            <div class="rini_cartridge_border mt-3 pb-2 cart_cartridge" data-type="Заправка">
+              <p class="mb-1 fs-4 fw-bold">Заправка</p>
+              <div class="row">
+                <div class="col-8">
+                  <p class="fs-3"><span class="cart_cartridge-price"><?= CFS()->get('cartridge_refill_price');?></span> руб.</p>
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-success btn-buy_refill cart_buy-button" data-cart>Заправить</button>
+                </div>
+              </div>
+            </div>
+            <?php
+          }
+          ?>
+
+
+          <?php if (CFS()->get('cartridge_dopinfo')) {
+            ?>
+            <div class="rini_cartridge_border">
+              <p class="mt-2"><?= CFS()->get('cartridge_dopinfo');?></p>
           </div>
           <?php
           }

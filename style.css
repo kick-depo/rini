@@ -71,32 +71,32 @@ min-height: 200px;
   height: 75px;
 }
 
-/* ↓Тест↓ */
-.test_items {
-  display: inline-block;
-  background-color: rgb(200,200,200);
+.cart {
   border: 1px solid #000;
+  border-radius: 8px;
+}
+.counter_wrapper {
+  font-weight: 600;
+  border: 1px solid #bbb;
   border-radius: 5px;
-  min-width: 35px;
-  text-align: center;
-  user-select: none;
 }
 
-.test_items:hover {
-  background-color: rgb(110,120,120);
+[data-counter] {
+  background-color: #e7e7e7;
+}
+[data-action="minus"] {
+  border-right: 1px solid #bbb;
+  user-select: none;
   cursor: pointer;
 }
 
-.cart {
-  border: 1px solid rgb(110,120,120);
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
+[data-action="plus"] {
+  border-left: 1px solid #bbb;
+  user-select: none;
+  cursor: pointer;
 }
+/* ↓Тест↓ */
 
-.cart-item {
-  border-bottom: 1px solid #000;
-}
 /* ↑Тест↑ */
 
 .span-align {
