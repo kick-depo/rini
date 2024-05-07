@@ -45,6 +45,7 @@ function change_menu_item_title($title, $item, $args, $depth) {
   }
   return $title;
 }
+
 add_filter('nav_menu_item_title', 'change_menu_item_title', 10, 4);
 add_filter('nav_menu_link_attributes', 'add_menu_link_attributes', 10, 3);
 add_filter( 'the_content', 'custom_table_class' );

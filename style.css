@@ -9,6 +9,12 @@ header {
   border-bottom: 1px solid #d5d5d5;
 }
 
+footer {
+  background-color: #f3f3f3!important;
+  border-top: 2px solid #d5d5d5;
+  font-size: 0.8em;
+}
+
 .btn-primary {
   font-weight: 600;
   background-color: #FF760B!important;
@@ -96,6 +102,11 @@ min-height: 200px;
   cursor: pointer;
 }
 /* ↓Тест↓ */
+.wpcf7-form-control {
+  width: 100%;
+  max-width: 300px; /* Здесь можно установить желаемую максимальную ширину */
+  margin: 5px 0 0 4px;
+}
 
 /* ↑Тест↑ */
 
@@ -131,11 +142,6 @@ min-height: 200px;
   color:#029ed7;
 }
 
-footer {
-  background-color: #f3f3f3!important;
-  border-top: 2px solid #d5d5d5;
-  font-size: 0.8em;
-}
 
 /* .rini_color_span {
   display: block;

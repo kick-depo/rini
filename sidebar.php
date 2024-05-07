@@ -1,3 +1,9 @@
+<?php
+/* 
+Template Name: Сайдбар
+*/ 
+?>
+
 <h3 class="text-uppercase">Заказ по телефону</h3>
 <a href="tel:+74956496449">+7 (495) 649-64-49</a>
 <p>Режим работы в будни:
@@ -16,6 +22,13 @@
     <small class="col-4 text-muted">Количество</small>
   </div>
   <div class="cart_wrapper"></div>
+  <div class="cart_total d-none mt-2">
+    <p>Итого: <span class="cart_total_price">0</span> руб.</p>
+    <button class="btn btn-primary btn_order mb-2">Оформить заказ</button>
+    <div class="order_form d-none">
+      <?= do_shortcode('[contact-form-7 id="da884a1" title="order_cartridge"]');?>
+    </div>
+  </div>
 </div>
 <p class="mb-4"><b>Возможна оплата картой</b></p>
 <p><b>ВНИМАНИЕ!</b> В связи с изменением курса рубля по отношению к иностранной валюте, цены на сайте могут отличаться от фактических, носят информационный характери не являются публичной офертой. Актуальную информацию можно получить у наших специалистов.
