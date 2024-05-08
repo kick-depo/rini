@@ -11,6 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const cartWrapper = document.querySelector('.cart_wrapper')
 
+  // Проверка, есть ли данные в localStorage
+  const savedCartItems = JSON.parse(localStorage.getItem('cartItems'))
+  if (savedCartItems) {
+    cartWrapper.innerHTML = savedCartItems
+    toggleCartStatus()
+  }
+
+  function updateCart() {
+    localStorage.setItem('cartItems', JSON.stringify(cartWrapper.innerHTML))
+  }
+
   // Обновление корзины
   function toggleCartStatus() {
     const cartNoneMessage = document.querySelector('.cart_none')
@@ -71,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML)
       toggleCartStatus()
       calcCartPrice()
+      updateCart()
 
       // Счетчик
       const newCartItem = cartWrapper.lastElementChild
@@ -83,15 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
           counter.innerText = currentValue - 1
         } else {
           newCartItem.remove()
-          toggleCartStatus()
-          
+          toggleCartStatus()          
         }
+        updateCart()
         calcCartPrice()
       })
       // Плюс
       newCartItem.querySelector('[data-action="plus"]').addEventListener('click', function() {
         const counter = newCartItem.querySelector('[data-counter]')
         counter.innerText = parseInt(counter.innerText) + 1
+        updateCart()
         calcCartPrice()
       })
 
@@ -100,6 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const orderForm = document.querySelector('.order_form')
       orderForm.classList.remove('d-none')
       })
+
+      updateCart()
     })
   })
 

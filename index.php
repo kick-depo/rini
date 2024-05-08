@@ -12,8 +12,27 @@ get_header();
       <div class="row">
         <div class="col-lg-9 col-sm-12">
           <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card my-3">
+            <?php $loop = CFS()->get('rini_popular_loop');
+              foreach ($loop as $item) {
+                ?>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card my-3">
+                    <img src="<?= $item['rini_popular_img'];?>" class="card-img-top cartridge_img" alt="Изображение товара">
+                    <div class="card-body">
+                      <h5 class="card-title"><?= $item['rini_popular_title'];?></h5>
+                      <p class="card-text  mb-1 rini_original">Оригинальный — <?= $item['rini_popular_price_original'];?> руб.</p>
+                      <p class="card-text rini_compatible">Совместимый — <?= $item['rini_popular_price_compatible'];?></p>
+                      <p class="card-text text-muted">Ресурс: <?= $item['rini_popular_resource'];?></p>
+                      <a href="<?= $item['rini_popular_link'];?>" class="btn btn-primary">Купить</a>
+                    </div>
+                  </div>
+                </div>
+                <?php
+              } 
+              ?>
+
+
+              <!-- <div class="card my-3">
                 <img src="img/svetocopy.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
                 <div class="card-body">
                   <h5 class="card-title">Картридж svetocopy Бумага A4</h5>
@@ -83,41 +102,48 @@ get_header();
                   <a href="#" class="btn btn-primary">Купить</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <h2 class="my-4">Популярная оргтехника</h2>
+            <?php $loop_orgtech = CFS()->get('rini_orgtech_loop');
+            foreach ($loop_orgtech as $item_orgtech) {
+            ?>
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="img/orgtech-1.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
+                <img src="<?= $item_orgtech['rini_orgtech_img'];?>" class="card-img-top cartridge_img" alt="Изображение товара">
                 <div class="card-body">
-                  <h5 class="card-title">Samsung CLX-3160N</h5>
-                  <p class="card-text mb-2 orgtech_price">9500 руб.</p>
-                  <p class="card-text text-muted">После ремонта</p>
-                  <a href="#" class="btn btn-primary">Купить</a>
+                  <h5 class="card-title"><?= $item_orgtech['rini_orgtech_title'];?></h5>
+                  <p class="card-text mb-2 orgtech_price"><?= $item_orgtech['rini_orgtech_price'];?>руб.</p>
+                  <p class="card-text text-muted"><?= $item_orgtech['rini_orgtech_state'];?></p>
+                  <a href="<?= $item_orgtech['rini_orgtech_link'];?>" class="btn btn-primary">Купить</a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card my-3">
-                <img src="img/orgtech-2.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
-                <div class="card-body">
-                  <h5 class="card-title">HP LaserJet 4250dtn</h5>
-                  <p class="card-text mb-2 orgtech_price">8000 руб.</p>
-                  <p class="card-text text-muted">После ремонта</p>
-                  <a href="#" class="btn btn-primary">Купить</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card my-3">
-                <img src="img/orgtech-3.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
-                <div class="card-body">
-                  <h5 class="card-title">Xerox Phaser 6130N</h5>
-                  <p class="card-text mb-2 orgtech_price">7000 руб.</p>
-                  <p class="card-text text-muted">После ремонта</p>
-                  <a href="#" class="btn btn-primary">Купить</a>
-                </div>
-              </div>
-            </div>
+            <?php
+            }
+            ?>
+             
+             <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+               <div class="card my-3">
+                 <img src="img/orgtech-2.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
+                 <div class="card-body">
+                   <h5 class="card-title">HP LaserJet 4250dtn</h5>
+                   <p class="card-text mb-2 orgtech_price">8000 руб.</p>
+                   <p class="card-text text-muted">После ремонта</p>
+                   <a href="#" class="btn btn-primary">Купить</a>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-4 col-md-6 col-sm-12">
+               <div class="card my-3">
+                 <img src="img/orgtech-3.jpg" class="card-img-top cartridge_img" alt="Изображение товара">
+                 <div class="card-body">
+                   <h5 class="card-title">Xerox Phaser 6130N</h5>
+                   <p class="card-text mb-2 orgtech_price">7000 руб.</p>
+                   <p class="card-text text-muted">После ремонта</p>
+                   <a href="#" class="btn btn-primary">Купить</a>
+                 </div>
+               </div>
+             </div> -->
           </div>
         </div>
 
@@ -147,9 +173,9 @@ get_header();
     <div class="container rini_info">
       <h1 class="mb-5">Картриджи для принтеров</h1>
       <div class="row mb-5">
-        <div class="col-lg-4 col-sm-12 text-center"><img src="img/torgovaya_marka-2.jpg" alt="Торговая марка"></div>
-        <div class="col-lg-4 col-sm-12 text-center"><img src="img/deklaracia-2.png" alt="Декларация"></div>
-        <div class="col-lg-4 col-sm-12 text-center"><img src="img/arhimed-2.jpg" alt="Выставка Архимед 2014"></div>
+        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/torgovaya_marka-2.jpg" alt="Торговая марка"></div>
+        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/deklaracia-2.png" alt="Декларация"></div>
+        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/arhimed-2.jpg" alt="Выставка Архимед 2014"></div>
       </div>
       <div class="row mb-5">
         <div class="col">

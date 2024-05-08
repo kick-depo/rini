@@ -10,6 +10,28 @@ Template Name: Сайдбар
   с 10:00 до 18:00
   в воскресенье, звонить перед выездом:
   с 12:00 до 16:00</p>
+<!-- Кнопка для вызова модального окна -->
+<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Заказать обратный звонок
+</button>
+
+<!-- Модальное окно -->
+<div class="rini_callback modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Обратный звонлк</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <?= do_shortcode('[contact-form-7 id="5f41ec7" title="Форма обратной связи"]') ;?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
 <h4 class="mb-5">
   БЕСПЛАТНАЯ ДОСТАВКА ОТ 800 РУБ.
 </h4>
