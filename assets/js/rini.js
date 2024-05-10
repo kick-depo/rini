@@ -11,34 +11,81 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const cartWrapper = document.querySelector('.cart_wrapper')
 
-  // Проверка, есть ли данные в localStorage
-  const savedCartItems = JSON.parse(localStorage.getItem('cartItems'))
-  if (savedCartItems) {
-    cartWrapper.innerHTML = savedCartItems
+  // Проверка наличия данных в localStorage
+  const savedCartData = localStorage.getItem('cart')
+  if (savedCartData) {
+    cartWrapper.innerHTML = savedCartData
     toggleCartStatus()
+    calcCartPrice()
+
+    const cartItems = cartWrapper.querySelectorAll('.cart-item')
+    cartItems.forEach(function(item) {
+      addCounterListeners(item)
+    })
+    // if (lastCartItem) {
+    //   addCounterListeners(lastCartItem)
+    // }    
   }
 
-  function updateCart() {
-    localStorage.setItem('cartItems', JSON.stringify(cartWrapper.innerHTML))
+  function saveCartToLocalStorage() {
+    localStorage.setItem('cart', cartWrapper.innerHTML)
   }
+
+  // При изменении состояния корзины, сохраняем данные в localStorage
+  function updateCartState() {
+    saveCartToLocalStorage()
+    toggleCartStatus()
+    calcCartPrice()
+  }
+
+  function addCounterListeners(newCartItem) {
+    // // Счетчик
+    // const newCartItem = cartWrapper.lastElementChild
+
+    // Минус
+    newCartItem.querySelector('[data-action="minus"]').addEventListener('click', function() {
+      const counter = newCartItem.querySelector('[data-counter]')
+      let currentValue = parseInt(counter.innerText)
+      if (currentValue > 1) {
+        counter.innerText = currentValue - 1
+      } else {
+        newCartItem.remove()
+        toggleCartStatus()          
+      }
+      calcCartPrice()
+      updateCartState()
+    })
+    // Плюс
+    newCartItem.querySelector('[data-action="plus"]').addEventListener('click', function() {
+      const counter = newCartItem.querySelector('[data-counter]')
+      counter.innerText = parseInt(counter.innerText) + 1
+      calcCartPrice()
+      updateCartState()
+    })
+
+    // Кнопка заказа
+    const btnOrder = document.querySelector('.btn_order')
+    btnOrder.addEventListener('click', function(){
+      const orderForm = document.querySelector('.order_form')
+      orderForm.classList.remove('d-none')
+    })
+  }
+
 
   // Обновление корзины
   function toggleCartStatus() {
     const cartNoneMessage = document.querySelector('.cart_none')
     const cartSmallInfo = document.querySelector('.cart_small_info')
     const cartTotal = document.querySelector('.cart_total')
-    // const orderForm = document.querySelector('.order_form')
 
     if (cartWrapper.children.length > 0) {
       cartNoneMessage.classList.add('d-none')
       cartSmallInfo.classList.remove('d-none')
       cartTotal.classList.remove('d-none')
-      // orderForm.classList.remove('d-none')
     } else {
       cartNoneMessage.classList.remove('d-none')
       cartSmallInfo.classList.add('d-none')
       cartTotal.classList.add('d-none')
-      // orderForm.classList.add('d-none')
     }
   }
 
@@ -82,39 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
       cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML)
       toggleCartStatus()
       calcCartPrice()
-      updateCart()
-
-      // Счетчик
-      const newCartItem = cartWrapper.lastElementChild
-
-      // Минус
-      newCartItem.querySelector('[data-action="minus"]').addEventListener('click', function() {
-        const counter = newCartItem.querySelector('[data-counter]')
-        let currentValue = parseInt(counter.innerText)
-        if (currentValue > 1) {
-          counter.innerText = currentValue - 1
-        } else {
-          newCartItem.remove()
-          toggleCartStatus()          
-        }
-        updateCart()
-        calcCartPrice()
-      })
-      // Плюс
-      newCartItem.querySelector('[data-action="plus"]').addEventListener('click', function() {
-        const counter = newCartItem.querySelector('[data-counter]')
-        counter.innerText = parseInt(counter.innerText) + 1
-        updateCart()
-        calcCartPrice()
-      })
-
-      const btnOrder = document.querySelector('.btn_order')
-      btnOrder.addEventListener('click', function(){
-      const orderForm = document.querySelector('.order_form')
-      orderForm.classList.remove('d-none')
-      })
-
-      updateCart()
+      updateCartState()
+      addCounterListeners(cartWrapper.lastElementChild)
     })
   })
 
