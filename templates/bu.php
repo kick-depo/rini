@@ -14,7 +14,7 @@ get_header();
           <p class="mb-4">Картриджи принимаются ТОЛЬКО по предварительному согласованию всех наименований по телефону <a href="tel:+74956496449">+7 (495) 649-64-49</a></p>
         </div>
         <div class="col-lg-9 col-md-12">
-          <div class="rini_table_scroll">
+          <div class="rini_table_scroll rini_fixed_column_table">
             <?php echo the_content();?>
           </div>         
         </div>

@@ -20,7 +20,7 @@ get_header();
                     <img src="<?= $item['rini_popular_img'];?>" class="card-img-top cartridge_img" alt="Изображение товара">
                     <div class="card-body">
                       <h5 class="card-title"><?= $item['rini_popular_title'];?></h5>
-                      <p class="card-text  mb-1 rini_original">Оригинальный — <?= $item['rini_popular_price_original'];?> руб.</p>
+                      <p class="card-text mb-1 rini_original">Оригинальный — <?= $item['rini_popular_price_original'];?> руб.</p>
                       <p class="card-text rini_compatible">Совместимый — <?= $item['rini_popular_price_compatible'];?></p>
                       <p class="card-text text-muted">Ресурс: <?= $item['rini_popular_resource'];?></p>
                       <a href="<?= $item['rini_popular_link'];?>" class="btn btn-primary">Купить</a>

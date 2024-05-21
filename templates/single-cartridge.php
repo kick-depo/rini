@@ -7,7 +7,7 @@ get_header();
 
 <main>
   <div class="container">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-lg-9 col-sm-12">
         <div class="row">
         <div class="col-lg-6 col-sm-12">
@@ -15,6 +15,8 @@ get_header();
           <div>
             <img id="main-image" class="img-fluid" src="<?= CFS()->get('cartridge_photo') ;?>" alt="Изображение картриджа">
           </div>
+          <?php if (CFS()->get('cartridge_original_photo_exist')) {
+            ?>
           <div class="rini_cartridge_gallery">
             <p>Фотографии совместимого картриджа:</p>
             <?php $loop = CFS()->get('cartridge_compatible_photo_add');
@@ -24,8 +26,13 @@ get_header();
               <?php
             }
             ?>
-          </div>
-          <div class="rini_cartridge_gallery mb-3">
+            </div>
+            <?php
+          }
+          ?>
+          <?php if (CFS()->get('cartridge_compatible_photo_exist')) {
+            ?>
+            <div class="rini_cartridge_gallery mb-3">
             <p>Фотографии оригинального картриджа:</p>
             <?php $loop = CFS()->get('cartridge_original_photo_add');
             foreach ($loop as $item) {
@@ -35,6 +42,9 @@ get_header();
             }
             ?>
           </div>
+          <?php
+          }
+          ?>
           <div>
             <p>Информация о картридже <span class="fw-bold"><?= the_title();?></span>:</p>
             <p><?= CFS()->get('cartridge_info');?></p>
@@ -55,7 +65,7 @@ get_header();
               </div>
             <?php if (CFS()->get('cartridge_compatible_price_10')) {
               ?>
-                <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span><?= CFS()->get('cartridge_compatible_price_10');?> руб.</span></p>
+                <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span class="cartridge_compatible_price_10"><?= CFS()->get('cartridge_compatible_price_10');?></span> руб.</p>
               <?php
               }
             ?>   
@@ -123,34 +133,40 @@ get_header();
               <div class="col-6"><span class="d-block my-1" style="height: 14px; width: 14px; background-color: <?= CFS()->get('cartridge_color');?>"></span></div>
             </div>
           </div>
-          <div class="rini_cartridge_border mb-5">
-            <p class="mb-1 fw-bold fs-5">Принтеры под картридж</p>
-            <p class="fw-bold fs-5"><?= the_title();?></p>
-            <div class="mb-4">
-              <?php $loop = CFS()->get('cartridge_printers_add');
+          <?php if (CFS()->get('cartridge_printers_exist')) {
+            ?>
+            <div class="rini_cartridge_border pb-3 mb-5">
+              <p class="mb-1 fw-bold fs-5">Принтеры под картридж</p>
+              <p class="fw-bold fs-5"><?= the_title();?></p>
+              <?php
+              $loop = CFS()->get('cartridge_printers_add');
                 foreach ($loop as $item) {
                   ?>
                   <p class="my-1"><?= $item['cartridge_printers_manufacturer'];?></p>
                   <?php
                   foreach ($item['cartridge_add'] as $item2) {
-                    ?>
+                  ?>
                     <a href="<?= $item2['cartridge_printers']['url'];?>" class="fw-bold fs-6">
                       <span class="me-2"><?= $item2['cartridge_printers']['text'];?></span>
                     </a>
-                    <?php
-                  }
+                  <?php
                 }
-                ?>
-            </div>
+              }
+              ?>
           </div>
-          <div class="rini_cartridge_border mb-5">
-            <p class="mb-1 fw-bold fs-5">Аналоги картриджа</p>
-            <p class="fw-bold fs-5"><?php the_title();?></p>
-            <div class="row">
-              <div>
+          <?php
+          }
+          ?>
+
+          <?php if (CFS()->get('cartridge_analog_exist')) {
+            ?>
+              <p class="mb-1 fw-bold fs-5">Аналоги картриджа</p>
+              <p class="fw-bold fs-5"><?php the_title();?></p>
+              <div class="mb-5">
                 <?php $loop_analog = CFS()->get('cartridge_analog_add');
                 foreach ($loop_analog as $item_analog) {
                   ?>
+                  <div class="rini_cartridge_border mb-3">
                   <a href="<?= $item_analog['cartridge_analog_link']['url'];?>" class="fw-bold fs-5"><?= $item_analog['cartridge_analog_link']['text'];?></a>
                   <div class="row mt-2">
                     <div class="col-2 text-center">
@@ -181,12 +197,15 @@ get_header();
                       <p><?= $item_analog['cartridge_analog_original_price'];?></p>
                     </div>
                   </div>
+                </div>
                   <?php
                 }
                 ?>
               </div>
-            </div>
-          </div>
+
+          <?php
+          }
+          ?>
         </div>
         </div>
 

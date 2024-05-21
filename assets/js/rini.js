@@ -134,11 +134,31 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
+  // Скидка
+  function applyDiscount(cartItems) {
+    cartItems.forEach(function(item) {
+      const itemType = item.dataset.type
+      const counter = item.querySelector('[data-counter]')
+      const priceEl = item.querySelector('.cart_currency_price')
+      const originalPrice = parseInt(priceEl.dataset.originalPrice || priceEl.innerText)
+
+      if (itemType === 'совместимый' && parseInt(counter.innerText) >= 10) {
+        const discountedPrice = priceInt(document.querySelector('.cartridge_compatible_price_10').innerText)
+        priceEl.innerText = discountedPrice
+        priceEl.dataset.discounted = 'true'
+      } else if (priceEl.dataset.discounted) {
+        priceEl.innerText = originalPrice
+        delete price.dataset.discounted
+      }
+    })
+  }
       
   // Итого
   function calcCartPrice() {
     const cartItems = document.querySelectorAll('.cart-item')
     let totalPrice = 0
+
+    applyDiscount(cartItems)
 
     cartItems.forEach(function(item) {
       const amountEl = item.querySelector('[data-counter]')
@@ -148,4 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     document.querySelector('.cart_total_price').innerText = totalPrice
   }
+
+  
 })
+
+
