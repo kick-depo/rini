@@ -32,7 +32,13 @@
           </li>
         </ul>
       </div>
-        
+      
+      <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+        <label class="screen-reader-text" for="s">Search for:</label>
+        <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+      </form>
+
       <form class="d-flex me-2 my-2 form-search" action="">
         <input class="form-control" type="search" placeholder="Поиск">
         <button class="btn btn-outline-secondary rini-btn">Найти</button>

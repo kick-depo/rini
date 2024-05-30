@@ -42,10 +42,10 @@
           ] );?>
 
       </div>
-        
-      <form class="d-flex me-2 my-2 form-search" action="">
-        <input class="form-control" type="search" placeholder="Поиск">
-        <button class="btn btn-outline-secondary rini-btn">Найти</button>
+
+      <form class="d-flex me-2 my-2 form-search" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+        <input class="form-control" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Поиск">
+        <input class="btn btn-outline-secondary rini-btn" type="submit" id="searchsubmit" value="Найти">
       </form>
     </div>
   </nav>

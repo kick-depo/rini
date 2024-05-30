@@ -15,6 +15,10 @@ footer {
   font-size: 0.8em;
 }
 
+ small {
+  font-size: 12px;
+}
+
 .btn-primary {
   font-weight: 600;
   background-color: #FF760B!important;
@@ -56,10 +60,6 @@ footer {
 
 .rini_cartridge_border {
   border-bottom: 1px solid #000;
-}
-
-.rini_cartridge_border small {
-  font-size: 12px;
 }
 
 .rini_cartridge_gallery img:hover {
