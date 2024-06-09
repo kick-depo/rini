@@ -57,6 +57,6 @@ Template Name: Сайдбар
 </p>
 <div>
   <h3 class="text-uppercase">Прайс картриджей</h3>
-  <a href="http://rini-ru-wp/картриджи/" class="btn btn-primary">ONLINE</a>
+  <a href="<?= home_url('/').'картриджи/';?>" class="btn btn-primary">ONLINE</a>
   <a href="https://docs.yandex.ru/docs/view?url=ya-browser%3A%2F%2F4DT1uXEPRrJRXlUFoewruDvajUVDmh2ypH0fQoOi7ODGASZVFOPIfEvioeQc_X7zG7wyqJxPQwD6I5KJUpWnUTP25zGNRTu58xsU_HsTByElgh5gmb23Hb39pV4X5Dgv0no_4a4iI55yI8vjjr5A7Q%3D%3D%3Fsign%3Dj2kNmWdzOknsS73UeXA6oVGdMNZ7FQobW6fRE6CVsg8%3D&name=rini_cartridges_2024-05-27.xls&nosw=1" class="btn btn-primary" target="_blank">СКАЧАТЬ EXCEL</a>
 </div>

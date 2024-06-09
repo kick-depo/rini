@@ -139,6 +139,18 @@ min-height: 200px;
   text-decoration: none!important;
 }
 
+.paginate_button::before,
+.paginate_button::after {
+    content: none!important;
+}
+
+.paginate_button.previous::before,
+.paginate_button.previous::after,
+.paginate_button.next::before,
+.paginate_button.next::after {
+    content: none!important;
+}
+
 /* ↑Тест↑ */
 
 .span-align {

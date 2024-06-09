@@ -50,15 +50,13 @@ get_header();
             ?>
           </div>
         </div>
-
-        <!-- Правый инфобар -->
         <div class="col-lg-3 col-sm-12 my-3">
           <?php get_sidebar(); ?>
           <div class="rini_conditioner my-5">
             <a href="#">
               <img src="<?= home_url('/').'/conditioner-1/' ;?>" alt="Кондиционер">
             </a>
-            <h3 class="text-uppercase">Установка и профилактика<br><a href="http://rini-ru-wp/установка/">кондиционеров</a></h3>
+            <h3 class="text-uppercase">Установка и профилактика<br><a href="<?= home_url('/').'установка/';?>">кондиционеров</a></h3>
           </div>
           <h3 class="mb-5">Скидка -10% постоянным клиентам<br>на совместимые картриджи</h3>
           <h3 class="mb-5">При самовывозе 15% скидка <br>на совместимые картриджи</h3>
@@ -74,9 +72,9 @@ get_header();
     <div class="container rini_info">
       <h1 class="mb-5">Картриджи для принтеров</h1>
       <div class="row mb-5">
-        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/torgovaya_marka-2.jpg" alt="Торговая марка"></div>
-        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/deklaracia-2.png" alt="Декларация"></div>
-        <div class="col-lg-4 col-sm-12 text-center"><img src="http://rini-ru-wp/wp-content/uploads/arhimed-2.jpg" alt="Выставка Архимед 2014"></div>
+        <div class="col-lg-4 col-sm-12 text-center mb-3"><img src="<?= home_url('/').'torgovaya_marka-2/';?>" alt="Торговая марка"></div>
+        <div class="col-lg-4 col-sm-12 text-center mb-3"><img src="<?= home_url('/').'deklaracia-2/';?>" alt="Декларация"></div>
+        <div class="col-lg-4 col-sm-12 text-center mb-3"><img src="<?= home_url('/').'arhimed-2/';?>" alt="Выставка Архимед 2014"></div>
       </div>
       <div class="row mb-5">
         <div class="col">
