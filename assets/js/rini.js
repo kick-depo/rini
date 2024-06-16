@@ -22,9 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     cartItems.forEach(function(item) {
       addCounterListeners(item)
     })
-    // if (lastCartItem) {
-    //   addCounterListeners(lastCartItem)
-    // }    
   }
 
   function saveCartToLocalStorage() {
@@ -39,9 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function addCounterListeners(newCartItem) {
-    // // Счетчик
-    // const newCartItem = cartWrapper.lastElementChild
-
     // Минус
     newCartItem.querySelector('[data-action="minus"]').addEventListener('click', function() {
       const counter = newCartItem.querySelector('[data-counter]')
@@ -108,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const cartridgeInfo = {
         title: cartridgeTitle,
         price: parseInt(cartridge.querySelector('.cart_cartridge-price').innerText),
+        originalPrice: parseInt(cartridge.querySelector('.cart_cartridge-price').innerText),
         type: cartridgeType,
       }
 
@@ -119,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-4">
                               <p class="fs-6 mb-1">${cartridgeInfo.title}</p>
                               <small class="fw-bold">${cartridgeInfo.type}</small>
+                              <span class="d-none discount">${cartridgeInfo.priceDiscount}</span>
+                              <span class="d-none original_price">${cartridgeInfo.originalPrice}</span>
                             </div>
                             <div class="col-4 cart_currency_price">${cartridgeInfo.price}</div>
                             <div class="col-4">
@@ -141,21 +138,35 @@ document.addEventListener('DOMContentLoaded', function() {
       
   // Итого
   function calcCartPrice() {
-    const cartItems = document.querySelectorAll('.cart-item')
-    let totalPrice = 0
-
-    applyDiscount(cartItems)
-
+    const cartItems = document.querySelectorAll('.cart-item');
+    let totalPrice = 0;
+  
     cartItems.forEach(function(item) {
-      const amountEl = item.querySelector('[data-counter]')
-      const priceEl = item.querySelector('.cart_currency_price')
-      const currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText)
-      totalPrice += currentPrice
-    })
+      const amountEl = item.querySelector('[data-counter]');
+      const priceEl = item.querySelector('.cart_currency_price');
+      const discountEl = item.querySelector('.discount');
+      const itemType = item.getAttribute('data-type');
+      const itemCount = parseInt(amountEl.innerText);
+      const itemPrice = parseInt(priceEl.innerText);
+      const itemOriginalPrice = parseInt(item.querySelector('.original_price').innerText);
+      const itemDiscountPrice = discountEl ? parseInt(discountEl.innerText) : itemPrice;
+  
+      let currentPrice;
+      console.log(`itemPrice: ${itemPrice}`)
+      console.log(`Original: ${itemOriginalPrice}`)
+
+      if (itemType === "Совместимый" && itemCount >= 10) {
+        currentPrice = itemDiscountPrice * itemCount;
+        priceEl.innerText = itemDiscountPrice;
+      } else {
+        currentPrice = itemOriginalPrice * itemCount;
+        priceEl.innerText = itemOriginalPrice;
+      }
+  
+      totalPrice += currentPrice;
+    });
     document.querySelector('.cart_total_price').innerText = totalPrice
   }
-
-  
 })
 
 

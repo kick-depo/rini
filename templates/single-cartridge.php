@@ -65,7 +65,7 @@ get_header();
               </div>
             <?php if (CFS()->get('cartridge_compatible_price_10')) {
               ?>
-                <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span class="cartridge_compatible_price_10"><?= CFS()->get('cartridge_compatible_price_10');?></span> руб.</p>
+                <p class="mb-1 text-muted">Цена совместимых картриджей от 10 шт. - <span class="cartridge_compatible_price_10" data-discount><?= CFS()->get('cartridge_compatible_price_10');?></span> руб.</p>
               <?php
               }
             ?>   

@@ -33,7 +33,7 @@ function add_menu_link_attributes($atts, $item, $args) {
   if ($args->theme_location === 'zapravka_menu') {
       // Добавляем классы к атрибутам ссылки
       $atts['class'] = 'btn btn-primary my-1';
-      $title = str_replace('Заправка ', '', $title);
+      // $title = str_replace('Заправка ', '', $title);
   }
   return $atts;
 }

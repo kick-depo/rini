@@ -52,12 +52,12 @@ get_header();
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample-2">
                       <div class="accordion-body">
                         <strong>От метро пешком</strong>
-                        <p><img src="<?= home_url('/').'shema-1/';?>" alt="Схема-1"></p>
-                        <p><img src="<?= home_url('/').'shema-2/';?>" alt="Схема-2"></p>
+                        <p><img src="<?= home_url('/').'scheme-1/';?>" alt="Схема-1"></p>
+                        <p><img src="<?= home_url('/').'scheme-2/';?>" alt="Схема-2"></p>
                         <strong>Из центра на автомашине</strong>
-                        <p><img src="<?= home_url('/').'shema-3/';?>" alt="Схема-3"></p>
+                        <p><img src="<?= home_url('/').'scheme-3/';?>" alt="Схема-3"></p>
                         <strong>Из области на автомашине</strong>
-                        <p><img src="<?= home_url('/').'shema-4/';?>" alt="Схема-4"></p>
+                        <p><img src="<?= home_url('/').'scheme-4/';?>" alt="Схема-4"></p>
                       </div>
                     </div>
                   </div>
