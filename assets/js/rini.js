@@ -152,8 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const itemDiscountPrice = discountEl ? parseInt(discountEl.innerText) : itemPrice;
   
       let currentPrice;
-      console.log(`itemPrice: ${itemPrice}`)
-      console.log(`Original: ${itemOriginalPrice}`)
 
       if (itemType === "Совместимый" && itemCount >= 10) {
         currentPrice = itemDiscountPrice * itemCount;
@@ -167,6 +165,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.querySelector('.cart_total_price').innerText = totalPrice
   }
+
+  const btnPushOrder = document.querySelector('.btn_order')
+
+  btnOrder.addEventListener('click', function() {
+    const cartItems = document.querySelectorAll('.cart-item')
+    const hiddenFieldsContainer = document.getElementById('cart_hidden_fields');
+    hiddenFieldsContainer.innerHTML = ''
+    
+    cartItems.forEach(function(item, index) {
+      const title = item.getAttribute('data-title')
+      const type = item.getAttribute('data-type')
+      const count = item.querySelector('[data-counter]').innerText
+      const price = item.querySelector('.cart_currency_price').innerText
+      const totalPrice = parseInt(count) * parseInt(price)
+
+      hiddenFieldsContainer.insertAdjacentHTML('beforeend', `
+        <input type="hidden" name="cart_titles_${index}" value="${title}">
+        <input type="hidden" name="cart_types_${index}" value="${type}">
+        <input type="hidden" name="cart_counts_${index}" value="${count}">
+        <input type="hidden" name="cart_prices_${index}" value="${price}">
+        <input type="hidden" name="cart_total_prices_${index}" value="${totalPrice}">
+    `)
+    })
+  })
+  
+
+
 })
 
 
