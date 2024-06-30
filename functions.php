@@ -14,6 +14,7 @@ function add_menu() {
   register_nav_menu('top', 'Меню в хедере');
   register_nav_menu('bottom', 'Меню в футере');
   register_nav_menu('zapravka_menu', 'Меню заправки');
+  register_nav_menu('cartridge_menu', 'Меню картриджей');
 }
 
 function custom_table_class( $custom_table_class ) {
@@ -37,6 +38,17 @@ function add_menu_link_attributes($atts, $item, $args) {
   }
   return $atts;
 }
+
+function add_menu_link_attributes_cartridge($atts, $item, $args) {
+  // Проверяем, что это ссылка и она находится в нужном меню
+  if ($args->theme_location === 'cartridge_menu') {
+      // Добавляем классы к атрибутам ссылки
+      $atts['class'] = 'btn btn-primary my-1';
+      // $title = str_replace('Заправка ', '', $title);
+  }
+  return $atts;
+}
+
 function change_menu_item_title($title, $item, $args, $depth) {
   // Проверяем, что это меню, к которому мы применяем изменения
   if ($args->theme_location === 'zapravka_menu') {
@@ -48,6 +60,7 @@ function change_menu_item_title($title, $item, $args, $depth) {
 
 add_filter('nav_menu_item_title', 'change_menu_item_title', 10, 4);
 add_filter('nav_menu_link_attributes', 'add_menu_link_attributes', 10, 3);
+add_filter('nav_menu_link_attributes', 'add_menu_link_attributes_cartridge', 10, 3);
 add_filter( 'the_content', 'custom_table_class' );
 
 ?>
