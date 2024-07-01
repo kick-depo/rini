@@ -111,7 +111,28 @@ get_header();
             <?php
           }
           ?>
+          <?php if (CFS()->get('cartridge_photoval_price') || CFS()->get('cartridge_chip_price')){
+            ?>
             <div class="rini_cartridge_border mt-3 pb-3" >
+            <div class="row">
+              <p class="mb-1 fs-4 fw-bold">Дополнительно</p>
+              <div class="row justify">
+                <div class="col text-center cart_cartridge" data-type="Фотовал">
+                  <p class="mb-1 fs-6 fw-bold">Фотовал</p>
+                  <p><span class="cart_cartridge-price"><?= CFS()->get('cartridge_photoval_price');?></span> руб.</p>
+                  <button class="btn btn-primary cart_buy-button" data-cart>Купить</button>
+                </div>
+                <div class="col text-center cart_cartridge" data-type="Чип">
+                  <p class="mb-1 fs-6 fw-bold">Чип</p>
+                  <p><span class="cart_cartridge-price"><?= CFS()->get('cartridge_chip_price');?></span> руб.</p>
+                  <button class="btn btn-primary cart_buy-button" data-cart>Купить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php
+          };?>
+            <!-- <div class="rini_cartridge_border mt-3 pb-3" >
               <div class="row">
                 <p class="mb-1 fs-4 fw-bold">Дополнительно</p>
                 <div class="row justify">
@@ -127,7 +148,7 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           <?php if (CFS()->get('cartridge_dopinfo')) {
             ?>

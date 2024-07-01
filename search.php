@@ -13,7 +13,7 @@ get_header();
           <?php while (have_posts()) { the_post(); ?>
             <div>
               <h3><a href="<?= esc_url(get_permalink()); ?>"><?= esc_html(get_the_title()); ?></a></h3>
-              <div><?= esc_html(get_the_excerpt()); ?></div>
+              <!-- <div><?= esc_html(get_the_excerpt()); ?></div> -->
             </div>
           <?php } ?>
           <?php the_posts_navigation(); ?>
